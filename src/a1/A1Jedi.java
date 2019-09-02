@@ -14,8 +14,8 @@ public class A1Jedi {
 		String[] itemName = new String[countOfItems];
 		double[] itemPrice = new double[countOfItems];
 		int[] itemOccurances = new int[countOfItems];
-		String[] customerItems = new String [countOfItems];
-		int [] customerItemOccurances = new int [countOfItems];
+		String[] customerItems = new String[countOfItems];
+		int [] customerItemOccurances = new int[countOfItems];
 		
 		
 		
@@ -63,7 +63,6 @@ public class A1Jedi {
 					System.out.println(customerItemOccurances[m] + " customers bought " 
 							+ itemOccurances + " " + itemName[m]);
 				}
-				System.out.println(customerItemOccurances );
 			}
 		}
 		

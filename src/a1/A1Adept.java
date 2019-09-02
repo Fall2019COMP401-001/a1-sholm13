@@ -13,8 +13,10 @@ public class A1Adept {
 	}
 	
 
-	
+	// Separate class to run
 	public static void process(Scanner scan) {
+		
+		// Creating arrays and variables that will be used later
 		
 		int countOfItems = scan.nextInt();
 		String[] itemName = new String[countOfItems];
@@ -23,6 +25,7 @@ public class A1Adept {
 		int smallestIndex = 0;
 		double total = 0.0;
 		
+		// Adding item names and prices to arrays
 		for (int x = 0; x < countOfItems; x++) {
 
 			itemName[x] = scan.next();
@@ -32,34 +35,36 @@ public class A1Adept {
 		
 			
 		}
-		//System.out.println(itemName);
-		//System.out.println(itemPrice);
+		
+		// Counting customers
 		
 		int countOfCustomers = scan.nextInt();
 		double amount = 0.0;
 		double average = 0.0;
 	
-		
+		// Creating arrays to track customer names and amounts paid
 		String[] customerFirstName = new String[countOfCustomers];
 		String[] customerLastName = new String[countOfCustomers];
 		double[] customerAmount = new double[countOfCustomers];
 		
+		
+		// Adding customer names to arrays
 		for (int i = 0; i < countOfCustomers; i++) {
 			String firstName = scan.next();
 			customerFirstName[i] = firstName;
-			String lastName;
-			lastName = scan.next();
+			String lastName = scan.next();
 			customerLastName[i] = lastName;
-			int countOfTotalItems;
-			countOfTotalItems = scan.nextInt();
+			int countOfTotalItems = scan.nextInt();
 			
-		
+			// Counting items purchased per customer
 			for (int j = 0; j < countOfTotalItems; j++) {
 				int quantityOfItem;
 				quantityOfItem = scan.nextInt();
 				String nameOfItem;
 				nameOfItem = scan.next();
 				
+				
+				// Calculating amount paid per customer
 				for (int k = 0; k < itemName.length; k++) {
 					if(itemName[k].equals(nameOfItem)) {
 						double cost = itemPrice[k];
@@ -68,18 +73,16 @@ public class A1Adept {
 						
 					}
 					
-					//System.out.println (nameOfItem + cost);
 					
-					//System.out.println(amount);
 				}
-				// customerAmount[i] = amount;
+				
 			}
 				
-				
+			// Finding average paid	
 			average = (total / countOfCustomers);
 		}
 		
-		
+		// Finding biggest and smallest spenders
 		double biggestSoFar = 0.0;
 		for (int l = 0; l < countOfCustomers; l++) {
 			if (customerAmount[l] > biggestSoFar) {
@@ -95,16 +98,14 @@ public class A1Adept {
 			}
 		}
 		
-		
 				
-		// testing arrays
-		//System.out.println(customerAmount[2]);
+		
 		System.out.println("Biggest: " + customerFirstName[biggestIndex] 
-				+ " " + customerLastName[biggestIndex] 
-						+ " (" + String.format("%.2f" , (customerAmount[biggestIndex])) + ")");
-		System.out.println("Smallest: " + customerFirstName[smallestIndex] + " "
-						+ customerLastName[smallestIndex] 
-								+ " (" + String.format("%.2f" ,(customerAmount[smallestIndex])) + ")");
+				+ " " + customerLastName[biggestIndex] + " (" 
+				+ String.format("%.2f" , (customerAmount[biggestIndex])) + ")");
+		System.out.println("Smallest: " + customerFirstName[smallestIndex] 
+				+ " "+ customerLastName[smallestIndex] + " (" 
+				+ String.format("%.2f" ,(customerAmount[smallestIndex])) + ")");
 		System.out.println ("Average: " + String.format("%.2f", average));
 }
 	}
