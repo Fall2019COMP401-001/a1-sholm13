@@ -25,7 +25,7 @@ public class A1Novice {
 				
 			}
 			
-			System.out.println( f.charAt(0) + last + String.format("%.2f", totalCost));
+			System.out.println( f.charAt(0) + ". "+ last + ": "+ String.format("%.2f", totalCost));
 			
 			
 					
