@@ -52,7 +52,6 @@ public class A1Adept {
 			customerLastName[i] = lastName;
 			int countOfTotalItems;
 			countOfTotalItems = scan.nextInt();
-			int index = 0;
 			
 		
 			for (int j = 0; j < countOfTotalItems; j++) {
@@ -63,11 +62,10 @@ public class A1Adept {
 				
 				for (int k = 0; k < itemName.length; k++) {
 					if(itemName[k].equals(nameOfItem)) {
-						index = k;
-						double cost = itemPrice[index];
-						
+						double cost = itemPrice[k];
 						customerAmount[i] += (cost * quantityOfItem);
 						total += (cost * quantityOfItem);
+						
 					}
 					
 					//System.out.println (nameOfItem + cost);
@@ -101,8 +99,12 @@ public class A1Adept {
 				
 		// testing arrays
 		//System.out.println(customerAmount[2]);
-		System.out.println("Biggest: " + customerFirstName[biggestIndex] + " " + customerLastName[biggestIndex] + " (" + customerAmount[biggestIndex] + ")");
-		System.out.println("Smallest: " + customerFirstName[smallestIndex] + " "+ customerLastName[smallestIndex] + " (" + customerAmount[smallestIndex] + ")");
+		System.out.println("Biggest: " + customerFirstName[biggestIndex] 
+				+ " " + customerLastName[biggestIndex] 
+						+ " (" + String.format("%.2f" , (customerAmount[biggestIndex])) + ")");
+		System.out.println("Smallest: " + customerFirstName[smallestIndex] + " "
+						+ customerLastName[smallestIndex] 
+								+ " (" + String.format("%.2f" ,(customerAmount[smallestIndex])) + ")");
 		System.out.println ("Average: " + String.format("%.2f", average));
 }
 	}
